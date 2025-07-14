@@ -9,7 +9,6 @@ type generateMetadataProps = {
 export async function generateMetadata({ params }: generateMetadataProps): Promise<Metadata> {
   const { slug } = await params;
   const tag: Tag | string = slug[0];
-
   return {
     title: `Notes - ${tag === 'All' ? 'All Tags' : tag}`,
     description: `Browse notes tagged with ${
@@ -34,8 +33,7 @@ export async function generateMetadata({ params }: generateMetadataProps): Promi
 }
 
 export default async function NotesPage({ params }: generateMetadataProps) {
-  const { slug } = await params;
+  const { slug } = params;
   const tag: Tag | string = slug[0];
-
   return <NotesClient tag={tag} />;
 }

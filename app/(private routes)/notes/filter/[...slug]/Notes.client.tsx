@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import { useDebouncedCallback } from 'use-debounce';
@@ -9,7 +8,6 @@ import Pagination from '@/components/Pagination/Pagination';
 import { fetchNotes } from '@/lib/api/clientApi';
 import Link from 'next/link';
 import { Tag } from '@/types/note';
-
 import css from './page.module.css';
 
 interface NotesClientProps {
@@ -52,12 +50,10 @@ export default function NotesClient({ tag }: NotesClientProps) {
                 onPageChange={setCurrentPage}
               />
             )}
-
-            <Link className={css.button} href={'/notes/action/create'}>
+            <Link className={css.button} href={'/notes/create'}>
               Create note +
             </Link>
           </header>
-
           {notes.length > 0 && <NoteList notes={notes} />}
         </section>
       </main>
