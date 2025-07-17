@@ -5,7 +5,7 @@ import { fetchNoteById } from '@/lib/api/clientApi';
 import { useRouter } from 'next/navigation';
 import css from './NotePreview.module.css';
 
-interface NotePreviewClientProps {
+interface NotePreview {
   id: string;
 }
 
